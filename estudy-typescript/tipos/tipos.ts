@@ -11,7 +11,7 @@ enum Cor {
 }
 
 let minhaCor: Cor = Cor.Verde
-console.log(minhaCor) // 100
+// console.log(minhaCor) // 100
 
 // function return string
 function returnName(): string {
@@ -45,10 +45,13 @@ let functionario: { supervisores: string[], ponto: (a: number) => string} = {
         return 'ryeyer'
     }
 }
-let funcionario: {
+
+// Alias
+type Funcionario = {
     supervisores: string[],
     baterPonto: (horas: number) => string
-} = {
+}
+let funcionario: Funcionario = {
     supervisores: ['Ana', 'Fernando'],
     baterPonto(horario: number): string {
         return 'hora'
@@ -63,16 +66,16 @@ let nota: number | string = 10
 
 type Contato = {
     nome: string,
-    tel1: string,
+    tel1: string | number,
     tel2: string | null
 }
 
 const contato1: Contato = {
     nome: 'Fulano',
-    tel1: '455454',
+    tel1: 45,
     tel2: null
 }
-// console.log(contato1.nome, contato1.tel1, contato1.tel2)
+console.log(contato1.nome, contato1.tel1, contato1.tel2)
 
 // OBJETOS
 type ContaBancaria = {
