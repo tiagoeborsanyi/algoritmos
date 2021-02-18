@@ -92,9 +92,9 @@ const contaBancaria1: ContaBancaria = {
     }
 }
 const correntista1: Correntista = {
-    nome: 'Ana',
+    nome: 'Ana Maria',
     contaBancaria: contaBancaria1,
-    contatos: ['65464', '4568454']
+    contatos: ['654644545454545', '4568454']
 }
 
 correntista1.contaBancaria.depositar(3000)

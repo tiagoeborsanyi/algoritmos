@@ -62,9 +62,9 @@ var contaBancaria1 = {
     }
 };
 var correntista1 = {
-    nome: 'Ana',
+    nome: 'Ana Maria',
     contaBancaria: contaBancaria1,
-    contatos: ['65464', '4568454']
+    contatos: ['654644545454545', '4568454']
 };
 correntista1.contaBancaria.depositar(3000);
 console.log(correntista1);

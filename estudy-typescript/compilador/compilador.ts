@@ -1,4 +1,4 @@
-let canal: string = 'Gaveta'
+let canal: string = 'Gaveta0'
 let inscritos: number = 6564
 
 // canal = inscritos
