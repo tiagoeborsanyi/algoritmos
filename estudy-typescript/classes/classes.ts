@@ -56,7 +56,7 @@ class Carro {
 
   }
 
-  private alterarVelocidade(delta: number): number {
+  protected alterarVelocidade(delta: number): number {
     const novaVelocidade = this.velocidadeAtual + delta
     const velocidadeValida = novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima
 
@@ -78,5 +78,109 @@ class Carro {
   }
 }
 
-const carro1 = new Carro('ford', 'ka', 185)
-console.log(carro1.acelerar())
+// const carro1 = new Carro('ford', 'ka', 185)
+// console.log(carro1.acelerar())
+
+class Ferrari extends Carro {
+  constructor(modelo: string, velocidadeMaxima: number) {
+    super('Ferrari', modelo, velocidadeMaxima);
+  }
+
+  public acelerar(): number {
+    return this.alterarVelocidade(25)
+  }
+
+  public frear(): number {
+    return this.alterarVelocidade(-15)
+  }
+}
+
+const f40 = new Ferrari('f40', 250);
+// console.log(f40.marca, f40.modelo);
+// console.log(f40.acelerar());
+// console.log(f40.frear());
+
+// GETTERS & SETTERS
+class Pessoa {
+  private _idade : number = 0;
+
+  get idade(): number {
+    return this._idade;
+  }
+
+  set idade(valor: number) {
+    this._idade = valor
+  }
+}
+
+const pessoal = new Pessoa
+pessoal.idade = 10;
+console.log(pessoal.idade)
+
+// Atributos e metodos estaticos
+class Matematica {
+  static PI: number = 3.1416
+
+  static areaCirc(raio: number): number {
+    return this.PI * raio * raio
+  }
+}
+
+// const m1 = new Matematica()
+// m1.PI = 4.2
+// console.log(m1.areaCirc(4))
+// console.log(Matematica.areaCirc(4))
+
+// CLASSE ABSTRATA
+abstract class Calculo {
+  protected resultado: number = 0;
+
+  abstract executar(...numeros: number[]): void
+
+  getResultado(): number {
+    return this.resultado
+  }
+}
+
+class Soma extends Calculo {
+  executar(...numeros: number[]): void {
+    this.resultado = numeros.reduce((t, a) => t+a)
+  }
+}
+
+class Multiplacação extends Calculo {
+  executar(...numeros: number[]): void {
+    this.resultado = numeros.reduce((t, a) => t*a)
+  }
+}
+
+let c1 = new Soma();
+c1.executar(1,3,5,4);
+// console.log(c1.getResultado())
+
+class Unico {
+  private static instance: Unico = new Unico;
+  private construtor() {}
+
+  static getInstance(): Unico {
+    return Unico.instance;
+  }
+
+  agora() {
+    return new Date
+  }
+}
+
+// console.log(Unico.getInstance().agora())
+
+// SOMENTE LEITURA
+class Aviao {
+  public readonly modelo: string
+
+  constructor(modelo: string, public readonly prefixo: string) {
+    this.modelo = modelo
+  }
+}
+
+const turboHelice = new Aviao('Tu-114', 'PT-ABC');
+// console.log(turboHelice)
