@@ -18,9 +18,25 @@
 //       '####'
 
 function steps(n) {
-  if (n === 1) {
-    console.log('#')
+  const arr = []
+
+  for (let i = 0; i < n; i++) {
+    let test = Array(n).fill('#', ' ', n-i)
+    arr.push(test)
   }
+  
+  arr.reverse().map(item => {
+    let text = []
+    for (let hash of item) {
+      if (hash == null) {
+        text.push(' ')
+      }
+      text.push(hash)
+    }
+    console.log(text.join(''))
+  })
 }
+
+steps(2)
 
 module.exports = steps;
