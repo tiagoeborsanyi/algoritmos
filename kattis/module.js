@@ -15,7 +15,7 @@ rl.on('line', ([...s]) => {
   for (let i = 0; i <= arr.length; i++) {
     if (arr[i]%42) {
       
-      if (!res.find(el => el === arr[i]%42)) {
+      if (!res.find(el => el === arr[i]%42)) {Docu  
         res.push(arr[i]%42)
       }
     }
