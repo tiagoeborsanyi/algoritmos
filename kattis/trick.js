@@ -5,37 +5,24 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.on('line', (n) => {
-  const moves = n.split('')
+function swapBall (arr) {
   let ball = 1;
-  for (let i = 0; i <= moves.length; i++) {
-    if (moves[i] === 'A') {
-      if (ball === 1) {
-        ball = 2
-      } else if (ball === 2) {
-        ball = 1
-      } else {
-        ball = 3
-      }
-    }
-    if (moves[i] === 'B') {
-      if (ball === 1) {
-        ball = 1
-      } else if (ball = 2) {
-        ball = 3
-      } else {
-        ball = 2
-      }
-    }
-    if (moves[i] === 'C') {
-      if (ball === 1) {
-        ball = 3
-      }else if (ball === 2) {
-        ball = 2
-      } else  {
-        ball = 1
-      }
+  for (let l of arr) {
+    if (l == 'A' && ball < 3) {
+      ball = 3 - ball
+    } else if (l == 'B' && ball > 1) {
+      ball = 5 - ball
+    } else if (l == 'C' && ball == 1) {
+      ball = 3
+    } else if (l == 'C' && ball == 3) {
+      ball = 1
     }
   }
-  console.log(ball)
+  return ball
+}
+
+rl.on('line', (n) => {
+  const moves = n.split('')
+  const res = swapBall(moves)
+  console.log(res)  
 })
