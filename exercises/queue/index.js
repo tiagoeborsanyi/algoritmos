@@ -9,16 +9,32 @@
 //     q.remove(); // returns 1;
 
 class Queue {
-  arr = []
-  add (n) {
-    this.arr.push(n)
+  constructor() {
+    this.data = []
   }
 
-  remove () {
-    let copy = this.arr.slice(0, 1)
-    this.arr.splice(0,1)
-    return copy[0]
+  add(record) {
+    this.data.unshift(record)
+  }
+
+  remove() {
+    return this.data.pop()
   }
 }
 
 module.exports = Queue;
+
+// class Queue {
+//   constructor() {
+//      this.arr = []
+//    }
+//   add (n) {
+//     this.arr.push(n)
+//   }
+
+//   remove () {
+//     let copy = this.arr.slice(0, 1)
+//     this.arr.splice(0,1)
+//     return copy[0]
+//   }
+// }
