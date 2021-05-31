@@ -1,8 +1,8 @@
 class Deque {
   constructor(
-    public count: number = 0,
-    public lowestCount: number = 0,
-    public items: any = {}
+    private count: number = 0,
+    private lowestCount: number = 0,
+    private items: any = {}
   ) {
     this.count = count
     this.lowestCount = lowestCount
@@ -40,3 +40,4 @@ export default Deque
 
 const deque = new Deque()
 console.log(deque.isEmpty())
+// console.log(deque.toString(), ' retre')

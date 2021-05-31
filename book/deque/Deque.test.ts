@@ -1,8 +1,6 @@
 import Deque from './Deque'
 
 describe('Testes para Deque', () => {
-  // const deque = new Deque()
-  // console.log('deque1: ', deque)
 
   test('func isEmpty() true', () => {
     const deque = new Deque()
@@ -19,5 +17,10 @@ describe('Testes para Deque', () => {
   test('func size()', () => {
     const deque = new Deque(2, 3, {})
     expect(deque.size()).toEqual(-1)
+  })
+
+  test('func toString() vazio', () => {
+    const deque = new Deque()
+    expect(deque.toString()).toEqual('')
   })
 });
