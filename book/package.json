@@ -6,7 +6,8 @@
   "scripts": {
     "start": "live-server",
     "compile:ts": "tsc -w",
-    "dev": "npm start && compile:tsc"
+    "dev": "npm start && compile:tsc",
+    "test": "jest --watch"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +16,14 @@
     "concurrently": "^6.2.0",
     "live-server": "^1.2.1",
     "systemjs": "^6.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.23",
+    "babel": "^6.23.0",
+    "babel-jest": "^27.0.2",
+    "jest": "^27.0.3"
   }
 }
