@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server",
-    "compile:ts": "npm start && tsc -w"
+    "compile:ts": "tsc -w",
+    "dev": "npm start && compile:tsc"
   },
   "author": "",
   "license": "ISC",
