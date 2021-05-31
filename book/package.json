@@ -7,7 +7,7 @@
     "start": "live-server",
     "compile:ts": "tsc -w",
     "dev": "npm start && compile:tsc",
-    "test": "jest --watch"
+    "test": "jest --noStackTrace --watch"
   },
   "author": "",
   "license": "ISC",
