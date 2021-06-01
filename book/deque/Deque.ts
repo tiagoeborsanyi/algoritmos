@@ -9,6 +9,15 @@ class Deque {
     this.items = items
   }
 
+  addFront(element: any): void {
+
+  }
+
+  addBack(element: string | number): void {
+    this.items[this.count] = element
+    this.count++
+  }
+
   isEmpty(): boolean {
     return this.size() === 0
   }

@@ -9,6 +9,12 @@ class Deque {
         this.lowestCount = lowestCount;
         this.items = items;
     }
+    addFront(element) {
+    }
+    addBack(element) {
+        this.items[this.count] = element;
+        this.count++;
+    }
     isEmpty() {
         return this.size() === 0;
     }
@@ -34,3 +40,4 @@ class Deque {
 exports.default = Deque;
 const deque = new Deque();
 console.log(deque.isEmpty());
+// console.log(deque.toString(), ' retre')

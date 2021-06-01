@@ -2,6 +2,13 @@ import Deque from './Deque'
 
 describe('Testes para Deque', () => {
 
+  test('func addBack()', () => {
+    const deque = new Deque()
+    const res = deque.addBack('joao')
+    console.log(res)
+    expect(deque.addBack('joao')).toEqual({0: 'joao'})
+  })
+
   test('func isEmpty() true', () => {
     const deque = new Deque()
     const r = deque.isEmpty()
