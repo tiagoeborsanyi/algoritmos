@@ -1,5 +1,6 @@
-const sum = require('./listas');
+import Listas from './listas'
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test('is class', () => {
+  const lista = new Listas()
+  expect(lista).toBeDefined()
 });
