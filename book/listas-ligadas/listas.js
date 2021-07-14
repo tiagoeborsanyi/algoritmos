@@ -23,4 +23,36 @@ export default class Listas {
     }
     this.count++
   }
+
+  insert(element, position) {
+
+  }
+
+  getElementAt(index) {
+
+  }
+
+  remove(element) {
+
+  }
+
+  indexOf(element) {
+
+  }
+
+  removeAt(element) {
+    
+  }
+
+  isEmpty() {
+    return this.size() === 0
+  }
+
+  size() {
+    return this.count
+  }
+
+  toString() {
+
+  }
 }
