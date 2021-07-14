@@ -29,3 +29,9 @@ test('func isEmpty equal zero', () => {
   expect(lista.isEmpty()).toBeTruthy()
   expect(lista.isEmpty()).not.toBeNull()
 });
+
+test('func removeAt', () => {
+  const lista = new Listas()
+  const remove = lista.removeAt(5)
+  expect(remove).toBeFalsy()
+});
