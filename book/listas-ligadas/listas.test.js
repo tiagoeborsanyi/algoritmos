@@ -34,4 +34,5 @@ test('func removeAt', () => {
   const lista = new Listas()
   const remove = lista.removeAt(5)
   expect(remove).toBeFalsy()
+  // expect(remove).toBeNull()
 });

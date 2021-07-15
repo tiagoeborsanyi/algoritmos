@@ -4,6 +4,7 @@ import { Node } from './linked-list-models'
 export default class Listas {
   constructor(equalsFn = defaultEquals) {
     this.count = 0
+    // head é para ser uma variavel privada da classe
     this.head = undefined
     this.equalsFn = equalsFn
   }
@@ -108,16 +109,36 @@ export default class Listas {
     return this.count
   }
 
-  toString() {
+  getHead() {
+    return this.head
+  }
 
+  toString() {
+    if (this.head == null) {
+      return '';
+    }
+
+    let objString = `${this.head.element}`;
+    let current = this.head.next;
+    for(let i = 0; i < this.size() && current != null; i++) {
+      console.log('OBJECTTOSTREING: ', objString, 'CURRENT: ', current.element)
+      objString = `${objString}, ${current.element}`
+      current = current.next
+      // console.log(current)
+    }
+    return objString
   }
 }
 
-// const list = new Listas()
-// list.push(10)
-// list.push(20)
-// list.push(30)
+const list = new Listas()
+list.push(10)
+list.push(20)
+list.push(30)
+list.push(40)
+list.push(50)
+list.push(60)
+list.push(70)
 // console.log('get ', list.getElementAt(1))
 // console.log('remove ', list.removeAt(1))
 // console.log('get ', list.getElementAt(1))
-// console.log(list.head)
+console.log(list.toString())
