@@ -9,16 +9,16 @@ function LinkedList() {
 
   // Aficiona um elemento ao final da lista
   this.append = function(element) {
-    const node = new Node(element)
-    let current
+    var node = new Node(element)
+    var current
 
     if (head === null) {
       head = node
     } else {
       current = head
-
+      console.log(current)
       while(current.next) {
-        current = current.nex
+        current = current.next
       }
       current.next = node
     }
@@ -72,3 +72,9 @@ function LinkedList() {
     console.log(this.toString())
   }
 }
+
+var ll = new LinkedList()
+ll.append('joao')
+ll.append('jose')
+ll.append('maria')
+ll.print()
