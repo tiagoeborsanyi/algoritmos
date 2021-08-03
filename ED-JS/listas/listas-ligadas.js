@@ -9,7 +9,7 @@ function LinkedList() {
 
   // Aficiona um elemento ao final da lista
   this.append = function(element) {
-
+    
   }
 
   // Adiciona um elemento em uma posicao especifica
@@ -44,11 +44,18 @@ function LinkedList() {
 
   // converte em string
   this.toString = function() {
+    let current = head, string = ''
 
+    while(current) {
+      string += current.element + ' '
+      current = current.next
+    }
+
+    return string
   }
 
   // imprime no console
   this.print = function() {
-
+    console.log(this.toString())
   }
 }
