@@ -9,7 +9,20 @@ function LinkedList() {
 
   // Aficiona um elemento ao final da lista
   this.append = function(element) {
-    
+    const node = new Node(element)
+    let current
+
+    if (head === null) {
+      head = node
+    } else {
+      current = head
+
+      while(current.next) {
+        current = current.nex
+      }
+      current.next = node
+    }
+    length++
   }
 
   // Adiciona um elemento em uma posicao especifica
